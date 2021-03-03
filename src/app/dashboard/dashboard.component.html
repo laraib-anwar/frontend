@@ -1,0 +1,50 @@
+
+<div class = "container">
+<header class = "jumbotron">
+    <div class = "container">
+            <h2 id = "head">Fabfeet</h2>
+           
+            <p>View our products... </p>
+          
+
+            <p><i class="fa fa-bell" aria-hidden="true"></i>Remember to <strong><a routerLink="/signup">Sign up</a></strong> in order to nuy our product<i class="fa fa-bell" aria-hidden="true"></i></p>
+            <p>
+                <a class = "btn btn-default btn-large" routerLink = "/new">Add new product</a>
+            </p>
+            <p>
+                <form action = "/products" method = "GET" class = "form-inline">
+                    <div class = "form-group">
+                        <input type = "text" name = "search" placeholder = "Product search..." class = "form-control">
+                            <input type = "submit" value = "Search" class = "btn btn-default">
+
+                        </div>
+                    </form>
+            <!-- </p> -->
+        </div>
+        </header>
+        <div class = "row text-center" style ="display:flex; flex-wrap: wrap;">
+            
+        <div class = "col-md-3 col-sm-6">
+        <div class = "thumbnail">
+                <div class = "item blue" *ngFor="let product of productInfo">
+        <img src = " {{product.pname}}">
+
+        <i class = "fa fa-camera"></i>
+
+        <div class = "caption">
+        <h4>{{product.pid}}</h4>
+        <h3>{{product.stock}}</h3>
+       
+        </div>
+        <p>
+        <!-- <a href = "/product/{{product.pid }}" class = "btn btn-success">More Details</a>-->
+            <strong>Rs.{{product.price}}</strong> 
+        </p>
+        </div>
+        </div>
+        </div>
+     
+    </div>
+
+</div>
+
